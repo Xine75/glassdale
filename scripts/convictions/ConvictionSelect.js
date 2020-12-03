@@ -4,6 +4,27 @@
  */
 import { useConvictions, getConvictions } from "./ConvictionProvider.js"
 
+// naming variable 
+const eventHub = document.querySelector(".filters")
+
+
+// On the event hub, listen for a "change" event.
+eventHub.addEventListener("change", event => {
+
+    // Only do this if the `crimeSelect` element was changed
+    if (event.target.id === "crimeSelect") {
+        // Create custom event. Provide an appropriate name.
+        const customEvent = new CustomEvent("crimeChosen", {
+            detail: {
+                crimeThatWasChosen: event.target.value
+            }
+        })
+
+        // Dispatch to event hub
+        eventHub.dispatchEvent(customEvent)
+    }
+})
+
 // Get a reference to the DOM element where the <select> will be rendered
 const contentTarget = document.querySelector(".filters__crime")
 

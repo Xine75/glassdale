@@ -4,6 +4,28 @@ import { Criminals } from "./CriminalComponent.js"
 //Invokes getCriminals, which has fetched, converted, ordered and placed into an array the criminal data
 //Then...
 
+const eventHub = document.querySelector(".container")
+
+// Listen for the custom event you dispatched in ConvictionSelect
+eventHub.addEventListener("crimeChosen", event => {
+  // Use the property you added to the event detail.
+  if (event.detail.crimeThatWasChosen !== "0"){
+      /*
+          Filter the criminals application state down to the people that committed the crime
+      */
+     const appStateCriminals = useCriminals()
+      const matchingCriminals = appStateCriminals.filter(currrentCrime =>{
+        return appStateCriminals.conviction === currrentCrime
+
+      })
+
+      /*
+          Then invoke render() and pass the filtered collection as
+          an argument
+      */
+  }
+})
+
 export const CriminalList = ()=> {
 getCriminals().then(() => {
     
