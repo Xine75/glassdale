@@ -1,8 +1,8 @@
 //Creates HTML formatting for JavaScript info
 
-export const Criminals = (criminal) => {
+export const Criminal = (criminal) => {
     return `
-        <section class="criminals">
+        <article class="criminals">
             <h1>${criminal.name}</h1>
             <div class="criminals__age">Age: ${criminal.age}</div>
             <div class="criminals__crime">Crime: ${criminal.conviction}</div>
@@ -11,6 +11,6 @@ export const Criminals = (criminal) => {
             <div class="criminals__term__end">Term End: ${new Date(criminal.incarceration.end).toLocaleDateString('en-US')}
             </div>
           
-        </section>
+        </article>
     `
 }
