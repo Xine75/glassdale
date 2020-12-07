@@ -4,8 +4,10 @@ CriminalList()
 import { ConvictionSelect } from "./convictions/ConvictionSelect.js"
 ConvictionSelect()
 
-import { officerSelect } from "./officers.OfficerSelect.js"
+import { officerSelect } from "./OfficerSelect.js"
 officerSelect()
+
+
 
 //What feature are we implementing
 //Filter our criminals by the crime committed!

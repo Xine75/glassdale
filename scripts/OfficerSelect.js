@@ -18,14 +18,14 @@ eventHub.addEventListener("change", changeEvent => {
 
     //Only do this if the "officerSelect" element was changed
     if (changeEvent.target.id === "officerSelect") {
-        //Create custom event. Provide an appropriate name.
-        const customEvent = new customEvent("officerChosen", {
+        //Get the name of the selected officer
+        const officerEvent = new CustomEvent("officerChosen", {
             detail: {
-                officerThatWasChosen: changeEvent.target.value
+                selectedOfficer: changeEvent.target.value
             }
         })
         //Dispatch to eventHub
-        eventHub.dispatchEvent(customEvent)
+        eventHub.dispatchEvent(officerEvent)
     }
 })
 
