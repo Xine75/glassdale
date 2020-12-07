@@ -1,7 +1,7 @@
 import { getCriminals, useCriminals } from "./CriminalDataProvider.js"
 import { Criminal } from "./CriminalComponent.js"
 import { useConvictions } from "../convictions/ConvictionProvider.js"
-import { useOfficers } from "../officers/OfficerProvider.js"
+import { useOfficers } from "../OfficerProvider.js"
 
 //Defines where eventHub broadcasts from
 const eventHub = document.querySelector(".container")
@@ -40,7 +40,8 @@ eventHub.addEventListener("crimeChosen", event => {
       //Invoke useCriminals() to access the array of criminals (and store it in a new variable)
       const criminals = useCriminals()
 
-      //Filters criminalsby checking if their conviction matches the conviction name
+      //Filters criminalsby checking if their conviction matches the conviction name (conviction.name is
+      //called that because of line 38 above)
       const matchingCriminals = criminals.filter( (criminal) => criminal.conviction === conviction.name)
 
       //Calls render on matchingCriminals, defined above as the array of criminals that match the chosen crime
@@ -49,12 +50,12 @@ eventHub.addEventListener("crimeChosen", event => {
 }) 
 
 //Listen for the customEvent you dispatched in OfficerSelect
-eventHub.addEventListener("officerSelect", event => {
+eventHub.addEventListener("officerChosen", event => {
 
   //Use the property you added to the event detail.
-  if (event.detail.officerThatWasChosen !== "0"){
+  if (event.detail.selectedOfficer !== "0"){
 
-    //Filter the officers application state downt the people who were arrested by that officer
+    //Filter the officers application state down to the people who were arrested by that officer
 
     console.log("officer", event.detail)
 
@@ -62,15 +63,16 @@ eventHub.addEventListener("officerSelect", event => {
     const officers = useOfficers()
 
     //Finds the id number associated with the officer (and stores it in a new var)
-    const officer = officers.find( (officer) => criminal.id === parseInt(event.detail.officerThatWasChosen) )
+    const arrestingOfficer = officers.find( (officer) => officer.id === parseInt(event.detail.selectedOfficer) )
 
     //Invoke useCriminals() to access the array of criminals (and store it in a new var)
     const criminals = useCriminals()
 
-    //Filters criminals by checking if their arresting officer matches the officer name
-    const arrestedCriminals = criminalElement.filter( (criminal) => criminal.arrestingOfficer === officer.name)
+    //Filters criminals by checking if their arresting officer matches the officer name (arrestingOffice.name is called
+    //that because of line 65 above)
+    const arrestedCriminals = criminals.filter( (criminal) => criminal.arrestingOfficer === arrestingOfficer.name)
 
-    //Calls render on arrestedCriminals
+    //Calls render on arrestedCriminals, defined abour as the array of criminals with the chosen arresting officer
     render(arrestedCriminals)
   }
 })
