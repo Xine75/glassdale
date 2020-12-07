@@ -5,14 +5,14 @@
 
 import { useConvictions, getConvictions } from "./ConvictionProvider.js"
 
-// setting up eventHub, naming variable, declaring where it will render in the DOM
+// setting up eventHub, naming variable, declaring where it will call from the DOM
 const eventHub = document.querySelector(".container")
 
 // Get a reference to the DOM element where the <select> will be rendered
 const contentTarget = document.querySelector(".filters__crime")
 
 
-// Send out custom message via eventHub. This doesn't run until change event is triggered (functions only run when they're called)
+// Create custom message via eventHub. This doesn't run until change event is triggered (functions only run when they're called)
 eventHub.addEventListener("change", event => {
 
     // Only do this if the `crimeSelect` element was changed

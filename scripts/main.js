@@ -7,7 +7,8 @@ ConvictionSelect()
 import { officerSelect } from "./OfficerSelect.js"
 officerSelect()
 
-
+import { NoteForm } from "./notes/NoteForm.js"
+NoteForm()
 
 //What feature are we implementing
 //Filter our criminals by the crime committed!
