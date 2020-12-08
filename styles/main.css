@@ -9,5 +9,18 @@ body {
 .filters__crime {
     font-family: sans-serif;
 }
+.noteList {
 
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.note {
+    color: blueviolet;
+    border: 1px blueviolet dotted;
+    padding: 0 8px 12px;
+    margin: 12px 0;
+    flex-basis: 25%;
+}
 
