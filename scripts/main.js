@@ -1,14 +1,18 @@
 import { CriminalList } from "./criminals/CriminalList.js"
-CriminalList()
-
 import { ConvictionSelect } from "./convictions/ConvictionSelect.js"
-ConvictionSelect()
-
 import { officerSelect } from "./OfficerSelect.js"
-officerSelect()
-
 import { NoteForm } from "./notes/NoteForm.js"
+import { ShowNoteButton } from "./notes/ShowNotesButton.js"
+import  "./notes/NoteList.js"
+
+CriminalList()
+ConvictionSelect()
+officerSelect()
 NoteForm()
+ShowNoteButton()
+
+
+
 
 //What feature are we implementing
 //Filter our criminals by the crime committed!
