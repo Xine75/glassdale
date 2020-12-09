@@ -11,23 +11,41 @@
 
     <main class="container">
         <header>
-            <div class="filters">
-                <!-- dropdown for crimes -->
-                <div class="filter filters__crime"></div>
-                <div class="filter filters__incarceration"></div>
-                <!-- dropdown for arresting officer -->
-                <div class="filter filters__officer"></div>
-            </div>
+           <h1><p>GlassDale Police Department</p>
+           <p>The Extortion Mystery</p></h1>
+           <img class="logo" src="./images/logo.png" alt="logo">
         </header>
+        <div class="filters">
+            <!-- dropdown for crimes -->
+            <div class="filter filters__crime"></div>
+            <div class="filter filters__incarceration"></div>
+            <!-- dropdown for arresting officer -->
+            <div class="filter filters__officer"></div>
+        </div>
+
+        
+        <!-- text fields for note info -->
         <article class="noteFormContainer"></article>
+
+        <!-- creates aside for alibi to render when button is clicked -->
+        <div class="alibiContainer">
+            <aside class="alibi"></aside>
+          </div>
+
+          <!-- contains the criminal cards -->
         <article class="criminalsContainer" id="criminalsContainer"></article>
+
+          <!-- contains the show/hide notes button and notes list -->
         <aside class="noteListContainer">
+            <!-- Show Note Button -->
             <div class="noteListButton"></div>
+            <!-- where notes appear when ShowNotes button is clicked -->
             <article class="noteList"></article>
           </aside>
+
           
-        
     </main>
+    
 
     <script type="module" src="./scripts/main.js"></script>
 </body>

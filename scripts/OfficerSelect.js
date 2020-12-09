@@ -1,6 +1,6 @@
 // OfficerSelect renders a list of arresting officers to a drop-down menu. It uses
 // an eventListener to broadcast when an officer is selected from the menu using
-//the "change" keyword.  OfficerList will listen for this message and filter the
+//the "change" keyword.  CriminalList will listen for this message and filter the
 //criminal data on the page to show only those criminals arrested by the chosen 
 //officer
 
