@@ -1,3 +1,7 @@
+//CriminalList is in charge of rendering the criminal cards to the DOM
+//It changes their state based on what the user selects from either the
+//ConvictionSelect or OfficerSelect drop down menus
+
 import { getCriminals, useCriminals } from "./CriminalDataProvider.js"
 import { Criminal } from "./CriminalComponent.js"
 import { useConvictions } from "../convictions/ConvictionProvider.js"
@@ -20,7 +24,7 @@ const render = (criminals) => {
   criminalElement.innerHTML = criminalCards.join("")
 
 }
-
+//If a crime is selected from the CrimeSelect dropdown
 // Listen for the custom event you dispatched in ConvictionSelect
 eventHub.addEventListener("crimeChosen", event => {
 
@@ -48,7 +52,7 @@ eventHub.addEventListener("crimeChosen", event => {
         render(matchingCriminals)
   } 
 }) 
-
+//If an officer is selected from the OfficerSelect dropdown
 //Listen for the customEvent you dispatched in OfficerSelect
 eventHub.addEventListener("officerChosen", event => {
 
@@ -76,6 +80,35 @@ eventHub.addEventListener("officerChosen", event => {
     render(arrestedCriminals)
   }
 })
+
+//listens for alibiEvent to be dispatched from AlibiComponent, 
+//renders associate name and alibi to the DOM
+const alibiTarget = document.querySelector(".alibi")
+
+    eventHub.addEventListener("alibiClicked", e => {
+
+        const criminalArray = useCriminals()
+
+        const criminalObj = criminalArray.find( (criminal) => criminal.id === parseInt(e.detail.alibiButton))
+
+        alibiTarget.innerHTML = `
+
+        <article class="alibi">
+        <h2>${criminalObj.name}</h2>
+        <ul>
+        ${
+          criminalObj.known_associates.map( (associate) =>
+              `<li>Associate Name: ${associate.name}</li>
+              <li>Alibi Given: ${associate.alibi}</li>`
+          )
+      }
+      </ul>
+        </article>
+
+        `
+
+    })
+
 
 
 //Renders all the criminals to the DOM after getting them from the API

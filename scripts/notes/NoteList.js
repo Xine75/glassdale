@@ -6,13 +6,24 @@ const contentTarget = document.querySelector(".noteList")
 // Define ye olde Evente Hubbe
 const eventHub = document.querySelector(".container")
 
+let visible = false
+
 eventHub.addEventListener("showNotesClicked", () => {
     //call NoteList and let that take over - it goes to get the notes from json API
-    NoteList()
+    if (visible === false) {
+        NoteList()
+        visible = true
+    } else {
+        contentTarget.innerHTML = ""
+        visible = false
+    }
+    
 })
 
 eventHub.addEventListener("noteStateChanged", () => {
+    if (visible === true)
     NoteList()
+    
 })
 // convert the notes objects to HTML with NoteHTMLConverter
 const render = (noteArray) => {

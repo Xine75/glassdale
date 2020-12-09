@@ -3,24 +3,52 @@
 
 body {
     font-family: sans-serif;
+    display: flex;
+    flex-wrap: wrap;
+    
 
+}
+
+header {
+    display: flex;
+    flex-direction: row;
+    align-items: center; 
+    justify-content: space-around;  
+    color: midnightblue;
 }
 
 .filters__crime {
     font-family: sans-serif;
 }
-.noteList {
+/* .noteList { I took this out so notes would show as a list and not cards
 
-    display: flex;
+     display: flex;
     flex-wrap: wrap;
-    justify-content: space-around;
+    justify-content: space-around; 
+} */
+.noteListContainer {
+    
+    padding: 5px;
 }
 
 .note {
-    color: blueviolet;
-    border: 1px blueviolet dotted;
+    color: floralwhite;
+    border: 1px floralwhite dotted;
     padding: 0 8px 12px;
     margin: 12px 0;
     flex-basis: 25%;
+    background-color: darkgreen;
+}
+.noteFormContainer {
+    text-align: center;
+
+}
+
+.alibi {
+    float: right;
+    background-color: midnightblue;
+    color: floralwhite;
+    padding: 5px;
+    margin: 10px;
 }
 
