@@ -3,8 +3,9 @@
 
 body {
     font-family: sans-serif;
-    display: flex;
+    /* display: flex; */
     flex-wrap: wrap;
+    background-color: white;
     
 
 }
@@ -13,12 +14,15 @@ header {
     display: flex;
     flex-direction: row;
     align-items: center; 
-    justify-content: space-around;  
+    justify-content: space-evenly;  
+    align-items: center;
     color: midnightblue;
+    margin: 40px 80px;
 }
 
-.filters__crime {
+.filter {
     font-family: sans-serif;
+    padding-top: 20px;
 }
 /* .noteList { I took this out so notes would show as a list and not cards
 

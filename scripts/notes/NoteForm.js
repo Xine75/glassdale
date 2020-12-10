@@ -38,6 +38,7 @@ eventHub.addEventListener("click", clickEvent => {
 //prompt user what goes in each field
 const render = () => {
     contentTarget.innerHTML = `
+    <h3>Enter a Note</h3>
     <input type="text" id="author" placeholder = "author name">
     <textarea id="text" placeholder="note text"></textarea>
     <input type="text" placeholder="suspect" id="suspect">

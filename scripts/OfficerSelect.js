@@ -44,7 +44,7 @@ const render = officersCollection => {
     //the dropdown elements.
     officerDrop.innerHTML = `
         <select class="dropdown" id="officerSelect">
-            <option value="0">Please select an officer...</option>
+            <option value="0">Filter by arresting officer...</option>
             ${
                 officersCollection.map( (officer) =>
                     `<option value = ${officer.id}>

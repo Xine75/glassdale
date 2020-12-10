@@ -100,7 +100,7 @@ const alibiTarget = document.querySelector(".alibi")
           criminalObj.known_associates.map( (associate) =>
               `<li>Associate Name: ${associate.name}</li>
               <li>Alibi Given: ${associate.alibi}</li>`
-          )
+          ).join("---------------------")
       }
       </ul>
         </article>
