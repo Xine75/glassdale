@@ -44,12 +44,12 @@ header {
     background-color: darkgreen;
 }
 .noteFormContainer {
-    text-align: center;
+    text-align: left;
     
-
 }
+
 .noteListButton {
-    text-align: center;
+    text-align: left;
     padding: 10px;
     margin-right: 125px;
 }
