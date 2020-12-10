@@ -20,11 +20,11 @@ eventHub.addEventListener("click", clickEvent => {
         // Make a new object representation of a note
         const newNote = {
             // Key/value pairs here - must be the same as the keys we established in notes.json
+            
             author: author,
             text: text, 
             suspect: suspect,
             timestamp: Date.now()
-            
         }
 
         // Change API state and application state
