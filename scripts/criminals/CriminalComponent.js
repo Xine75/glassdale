@@ -21,19 +21,24 @@ export const Criminal = (criminal) => {
 }
 
 //Create custom event and broadcast that Associate Alibi button was clicked
-//Placed in same module as button itself
+//Placed in same module as button itself so that if any changes are made to labelling it can be
+//addressed in both places easily
 eventHub.addEventListener("click", e => {
+    //looks for the Associate Alibi button by looking for string tag that starts with "associates--"
     if (e.target.id.startsWith("associates--")) {
+
         //array destructuring to assign variables to the two strings returned by the 
-        //.split method.  Allows us to access the second string on line 33
+        //.split method.  Allows us to access the second string on line 36
         let [tag, id] =  e.target.id.split("--")
         
         const alibiEvent = new CustomEvent ("alibiClicked", {
             detail: {
-            alibiButton: id // this is the value of the id we accessed line 29
+            alibiButton: id // this is the value of the id we accessed line 32 and the data we are dispatching
+            //to our event listener in CriminalList
             }
             
         }) 
+        //dispatchEvent notifies the eventListener and passes the criminal's id
         eventHub.dispatchEvent(alibiEvent)
     }
   })
