@@ -16,7 +16,7 @@ export const getCriminals = () => {
     .then(response => response.json())
     .then(
         orderedCriminals => {
-            console.table(orderedCriminals)
+            //console.table(orderedCriminals)
             criminals = orderedCriminals
         }
     )

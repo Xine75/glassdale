@@ -6,6 +6,7 @@ import { getCriminals, useCriminals } from "./CriminalDataProvider.js"
 import { Criminal } from "./CriminalComponent.js"
 import { useConvictions } from "../convictions/ConvictionProvider.js"
 import { useOfficers } from "../OfficerProvider.js"
+import { AssociatesDialog } from "./DialogAlibi.js"
 
 //Defines where eventHub broadcasts from
 const eventHub = document.querySelector(".container")
@@ -22,7 +23,7 @@ const render = (criminals) => {
 
   //Takes criminalCards and pushes into criminalElement (defined on line 14), 
   //.join("") turns the array into a string with no commas between
-  criminalElement.innerHTML = criminalCards.join("")
+  criminalElement.innerHTML = `${criminalCards.join("")} ${AssociatesDialog()}`
 
 }
 //THEN, If a crime is selected from the CrimeSelect dropdown
