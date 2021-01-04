@@ -42,14 +42,16 @@ eventHub.addEventListener("crimeChosen", event => {
       const convictions = useConvictions()
 
       //Finds the id number associated with the conviction that matches the selection from the dropdown (and store it in a new variable)
-      const conviction = convictions.find( (conviction) => conviction.id === parseInt(event.detail.crimeThatWasChosen) )
+      const conviction = convictions.find( (conviction) => 
+      conviction.id === parseInt(event.detail.crimeThatWasChosen) )
       
       //Invoke useCriminals() to access the array of criminals (and store it in a new variable)
       const criminals = useCriminals()
 
       //Filters criminals by checking if their conviction matches the conviction name (conviction.name is
       //called that because of line 44 above) .filter is used because more than one criminal will have a matching conviction
-      const matchingCriminals = criminals.filter( (criminal) => criminal.conviction === conviction.name)
+      const matchingCriminals = criminals.filter( (criminal) => 
+      criminal.conviction === conviction.name)
 
       //Calls render on matchingCriminals, defined above as the array of criminals that match the chosen crime
       //Criminals rendered to the DOM are now only those that were convicted of the crime chosen from dropdown
