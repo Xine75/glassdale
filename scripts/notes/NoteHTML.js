@@ -14,10 +14,10 @@ export const NoteHTMLConverter = (noteObject, criminalObj) => {
 
 
 // TODO: Change suspect text input to dropdown select of API criminals
-// Make a select element
-// Populate that element with criminals 
+// Make a select element *done*
+// Populate that element with criminals *done*
 // Change the above HTML representation *done*
-// Event listener to lisent for the dropdown change/select ?
+// Event listener to lisent for the dropdown change/select ? *unneeded*
 // Change how the note is saved to capture the criminalID
 // Change how note objects are represented when we fetch notes data *done*
 // modules to refactor:
