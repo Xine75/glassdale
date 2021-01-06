@@ -16,6 +16,7 @@ eventHub.addEventListener("click", clickEvent => {
         // and .value to access what has been typed into the field
         const author = document.querySelector("#author").value
         const text = document.querySelector("#text").value
+        //parseInt to capture the criminalID as an integer
         const criminalId = parseInt(document.querySelector("#suspect").value)
 
         // Make a new object representation of a note
@@ -40,7 +41,7 @@ eventHub.addEventListener("click", clickEvent => {
 const render = () => {
     
     const criminalsCollection = useCriminals()
-
+    //we added a dropdown so that only notes pertaining to listed criminals can be created
     contentTarget.innerHTML = `
     <h3>Enter a Note</h3>
     <input type="text" id="author" placeholder = "author name">
