@@ -4,21 +4,45 @@ const eventHub = document.querySelector(".container")
 
 //Creates HTML formatting for JavaScript info
 
-export const Criminal = (criminal) => {
+export const Criminal = (criminalObject, facilities) => {
     return `
-        <article class="criminals">
-            <h1>${criminal.name}</h1>
-            <div class="criminals__age">Age: ${criminal.age}</div>
-            <div class="criminals__crime">Crime: ${criminal.conviction}</div>
-            <div class="criminals__term__start">Term Start: ${new Date(criminal.incarceration.start).toLocaleDateString('en-US')}
+    <div class="criminal">
+        <h4>${criminalObject.name}</h4>
+        <div class="criminal__details">
+            <p>Convicted for ${criminalObject.conviction}</p>
+            <p>Arrested by ${criminalObject.arrestingOfficer}</p>
+            <p>Incarcerated between:
+                ${new Date(criminalObject.incarceration.start).toLocaleDateString()} and
+                ${new Date(criminalObject.incarceration.end).toLocaleDateString()}
+            </p>
+            <p>Age: ${criminalObject.age}</p>
+            <div>
+                <h2>Facilities</h2>
+                <ul>
+                    ${facilities.map(f => `<li>${f.facilityName}</li>`).join("")}
+                </ul>
             </div>
-            <div class="criminals__term__end">Term End: ${new Date(criminal.incarceration.end).toLocaleDateString('en-US')}
-            </div>
-            <button id="associates--${criminal.id}">Associate Alibis</button>
-          
-        </article>
+            <button id="associates--${criminalObject.id}">Associate Alibis</button>
+        </div>
+    </div>
     `
 }
+
+// export const Criminal = (criminal) => {
+//     return `
+//         <article class="criminals">
+//             <h1>${criminal.name}</h1>
+//             <div class="criminals__age">Age: ${criminal.age}</div>
+//             <div class="criminals__crime">Crime: ${criminal.conviction}</div>
+//             <div class="criminals__term__start">Term Start: ${new Date(criminal.incarceration.start).toLocaleDateString('en-US')}
+//             </div>
+//             <div class="criminals__term__end">Term End: ${new Date(criminal.incarceration.end).toLocaleDateString('en-US')}
+//             </div>
+//             <button id="associates--${criminal.id}">Associate Alibis</button>
+          
+//         </article>
+//     `
+// }
 
 //Create custom event and broadcast that Associate Alibi button was clicked
 //Placed in same module as button itself so that if any changes are made to labelling it can be
