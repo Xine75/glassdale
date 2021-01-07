@@ -24,12 +24,12 @@ header {
     font-family: sans-serif;
     padding-top: 20px;
 }
-/* .noteList { I took this out so notes would show as a list and not cards
+.noteList { I took this out so notes would show as a list and not cards
 
      display: flex;
     flex-wrap: wrap;
     justify-content: space-around; 
-} */
+}
 .noteListContainer {
     
     padding: 5px;
