@@ -8,13 +8,11 @@
 </head>
 
 <body>
-
     <main class="container">
         <header>
           <img class="logo" src="./images/logo.png" alt="logo">
            <div><h2><p>Glassdale Police Department</p></h2>
            <p><i>Where the events are listening!</i></p></div>
-           
           
         </header>
         <div class="filters">
@@ -24,20 +22,16 @@
             <!-- dropdown for arresting officer -->
             <div class="filter filters__officer"></div>
         </div>
-
-        
+      
         <!-- text fields for note info -->
-        <article class="noteFormContainer">
-        </article>
+        <article class="noteFormContainer"></article>
         <div class="noteListButton"></div>
         
-
         <!-- creates aside for alibi to render when button is clicked -->
-        <div class="alibiContainer">
-            <aside class="alibi"></aside>
-          </div>
+        <div class="alibiContainer"></div>
 
           <!-- contains the criminal cards -->
+          <section class="criminal__notes">
         <article class="criminalsContainer" id="criminalsContainer"></article>
 
           <!-- contains the show/hide notes button and notes list -->
@@ -47,11 +41,8 @@
             <!-- where notes appear when ShowNotes button is clicked -->
             <article class="noteList"></article>
           </aside>
-
-          
+        </section>    
     </main>
-    
-
     <script type="module" src="./scripts/main.js"></script>
 </body>
 

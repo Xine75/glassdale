@@ -42,7 +42,6 @@ export const CriminalList = ()=> {
 //   }
 //   //Takes criminalCards and pushes into criminalElement (defined on line 14), 
 //   //.join("") turns the array into a string with no commas between
-  // contentTarget.innerHTML = `${criminalCards.join("")} ${AssociatesDialog()}`
 // }
 
 //FIRST, render ALL the criminals to the DOM. The opening state
