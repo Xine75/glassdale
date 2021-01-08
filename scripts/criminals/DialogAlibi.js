@@ -1,6 +1,7 @@
 import { useCriminals } from "./CriminalDataProvider.js"
 
 const eventHub = document.querySelector(".container")
+const contentTarget = document.querySelector(".alibiContainer")
 // const dialogClose = document.querySelector("#closeDialog")
 
 eventHub.addEventListener("click", (event) => {
@@ -33,7 +34,8 @@ eventHub.addEventListener("alibiClicked", (event) => {
 })
 
 export const AssociatesDialog = () => {
-  return `
+  contentTarget.innerHTML =
+   `
     <dialog id="associatesDialog">
       <div id="associatesDialog__text"></div>
       <button id="closeDialog">close</button>

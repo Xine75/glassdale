@@ -24,7 +24,7 @@ header {
     font-family: sans-serif;
     padding-top: 20px;
 }
-.noteList { I took this out so notes would show as a list and not cards
+.noteList { 
 
      display: flex;
     flex-wrap: wrap;
@@ -38,7 +38,7 @@ header {
 .note {
     color: floralwhite;
     border: 1px floralwhite dotted;
-    padding: 0 8px 12px;
+    padding: 20px;
     margin: 12px 0;
     flex-basis: 25%;
     background-color: darkgreen;
@@ -52,6 +52,9 @@ header {
     text-align: left;
     padding: 10px;
     margin-right: 125px;
+}
+.criminal__notes {
+    display: flex;
 }
 
 .alibi {
