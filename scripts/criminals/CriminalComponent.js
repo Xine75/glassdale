@@ -7,7 +7,7 @@ const eventHub = document.querySelector(".container")
 export const Criminal = (criminalObject, facilities) => {
     return `
     <div class="criminal">
-        <h4>${criminalObject.name}</h4>
+        <h2>${criminalObject.name}</h2>
         <div class="criminal__details">
             <p>Convicted for ${criminalObject.conviction}</p>
             <p>Arrested by ${criminalObject.arrestingOfficer}</p>
@@ -17,7 +17,7 @@ export const Criminal = (criminalObject, facilities) => {
             </p>
             <p>Age: ${criminalObject.age}</p>
             <div>
-                <h2>Facilities</h2>
+                <h4>Facilities</h4>
                 <ul>
                     ${facilities.map(f => `<li>${f.facilityName}</li>`).join("")}
                 </ul>
