@@ -3,23 +3,25 @@ import { ConvictionSelect } from "./convictions/ConvictionSelect.js"
 import { officerSelect } from "./OfficerSelect.js"
 import { NoteForm } from "./notes/NoteForm.js"
 import { ShowNoteButton } from "./notes/ShowNotesButton.js"
-import  "./notes/NoteList.js"
-//import "./criminals/Alibi.js"
-
-//import { Criminal } from "./criminals/CriminalComponent.js"
+import { WitnessStatementButton } from "./witnesses/witnessButton.js"
 import { AssociatesDialog } from "./criminals/DialogAlibi.js"
+
+import  "./notes/NoteList.js"
+import "./witnesses/WitnessList.js"
+import "./witnesses/Witness.js"
 
 CriminalList()
 ConvictionSelect()
 officerSelect()
 NoteForm()
 ShowNoteButton()
-//Criminal()
 AssociatesDialog()
+WitnessStatementButton()
 
 
-
-
+//import "./criminals/Alibi.js"
+//import { Criminal } from "./criminals/CriminalComponent.js"
+//Criminal()
 
 
 //What feature are we implementing

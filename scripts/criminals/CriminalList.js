@@ -12,7 +12,7 @@ import { useFacilities, getFacilities } from "../facility/FacilityProvider.js"
 //Defines where eventHub broadcasts from
 const eventHub = document.querySelector(".container")
 //Defines where an array of criminal objects will render to the DOM (see line 24 below)
-const contentTarget = document.querySelector(".criminalsContainer")
+const contentTarget = document.querySelector(".contentContainer")
 
 let criminals = []
 let facilities = []

@@ -1,6 +1,6 @@
 const contentTarget = document.querySelector(".noteListButton")
 const eventHub = document.querySelector(".container")
-let visible = false
+
 
 //Broadcasts the fact that the button was clicked, but no data payload
 //along with it.
