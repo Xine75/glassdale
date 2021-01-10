@@ -10,6 +10,7 @@ import { DisplayFacilitiesButton } from "./facility/facilitiesButton.js"
 import  "./notes/NoteList.js"
 import "./witnesses/WitnessList.js"
 import "./witnesses/Witness.js"
+import "./facility/FacilityList.js"
 
 CriminalList()
 ConvictionSelect()
