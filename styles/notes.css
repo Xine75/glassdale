@@ -1,0 +1,33 @@
+.noteListContainer {
+    
+    padding: 5px;
+}
+
+.noteList { 
+
+    display: flex;
+   flex-wrap: wrap;
+   justify-content: space-around; 
+}
+
+.note {
+    color: floralwhite;
+    border: 1px floralwhite dotted;
+    padding: 20px;
+    margin: 12px 0;
+    flex-basis: 25%;
+    background-color: darkgreen;
+}
+.noteFormContainer {
+    text-align: left;
+    
+}
+
+.noteListButton {
+    text-align: left;
+    padding: 10px;
+    margin-right: 125px;
+}
+.criminal__notes {
+    display: flex;
+}

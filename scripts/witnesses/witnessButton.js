@@ -1,4 +1,4 @@
-//handles click event on button and dispatches
+
 //creates the WitnessStatements button
 
 const contentTarget = document.querySelector(".witnessButton")
