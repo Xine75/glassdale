@@ -7,7 +7,7 @@ export const Witness = (witnessObject) => {
     return `
     <section class="witness" id="witness--${witnessObject.id}">
     <h4 id="witness__${witnessObject.name}"><span class="bold">Name</span>: ${lastName}, ${firstName}</h4>
-    <p span class="bold">Statements</span>: ${witnessObject.statements}</p>
+    <p span class="bold">Statement</span>: ${witnessObject.statements}</p>
     </section>
     `
 }

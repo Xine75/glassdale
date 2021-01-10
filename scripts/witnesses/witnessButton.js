@@ -4,6 +4,7 @@
 const contentTarget = document.querySelector(".witnessButton")
 const eventHub = document.querySelector(".container")
 
+
 //inserts a button on the DOM
 export const WitnessStatementButton = () => {
     contentTarget.innerHTML =`
@@ -11,11 +12,9 @@ export const WitnessStatementButton = () => {
      `
 }
 
-
-
 //Broadcast the fact that the button was clicked, no payload
 contentTarget.addEventListener("click", clickEvent => {
-    console.log("Witness button listening")
+    // console.log("Witness button listening")
     if(clickEvent.target.id === ("showWitnesses")) {
         const witnessEvent = new CustomEvent("showWitnessClicked") 
         eventHub.dispatchEvent(witnessEvent)

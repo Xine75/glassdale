@@ -4,6 +4,7 @@
 
 import { getWitnesses, useWitnesses } from "./WitnessProvider.js"
 import { Witness } from "./Witness.js"
+import { CriminalList } from "../criminals/CriminalList.js"
 
 //Defines where eventHub broadcasts from
 const eventHub = document.querySelector(".container")
@@ -30,10 +31,23 @@ const WitnessList = () => {
         render()
     })
 }
+let visible = false
 
+//listens for witnessButtonClick and toggles from witnesses to criminals
+//depending on which is visible
+eventHub.addEventListener("showWitnessClicked", () => {
+    //toggles back and forth from showing or hiding notes depending on the state, and changes the state
+    if (visible === false) {
+        WitnessList()
+        visible = true
+    } else {
+        CriminalList()
+        visible = false
+    }
+})
 
 eventHub.addEventListener("showWitnessClicked", e => {
-    console.log("I'm listening")
+    // console.log("I'm listening")
    WitnessList()
 })
 
