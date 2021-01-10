@@ -8,23 +8,33 @@ import { Witness } from "./Witness.js"
 //Defines where eventHub broadcasts from
 const eventHub = document.querySelector(".container")
 //Defines where an array of witness objects will render to the DOM (see line 24 below)
-const contentTarget = document.querySelector(".criminalsContainer")
+const contentTarget = document.querySelector(".contentContainer")
+
+let appStateWinessess =[]
+
+//Renders a list of witnessObjects to the DOM
+
+const render = () => {
+    contentTarget.innerHTML = appStateWinessess.map(w => Witness(w)).join("")
+}
+/*
+Runs the function render to rener all the witness elements to the .contentContainer when
+the button element is clicked
+*/
+
+const WitnessList = () => {
+    contentTarget.innerHTML = ""
+    getWitnesses()
+    .then(() => {
+        appStateWinessess = useWitnesses()
+        render()
+    })
+}
+
 
 eventHub.addEventListener("showWitnessClicked", e => {
     console.log("I'm listening")
-    if (clickEvent.target.id === "showWitnesses"){
-        const render = (witnesses) => {
-            let witnessCards = []
-            for (const witness of witnesses){
-                contentTarget.innerHTML = witnessCards.push(Witness(witness)).join("")
-            }
-        }
-
-
-    }
-
-
-
+   WitnessList()
 })
 
 
