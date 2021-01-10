@@ -1,13 +1,13 @@
 @import "criminals.css";
 @import "witness.css";
+@import "alibi.css";
+@import "notes.css";
 
 body {
     font-family: sans-serif;
     /* display: flex; */
     flex-wrap: wrap;
     background-color: white;
-    
-
 }
 
 header {
@@ -24,46 +24,8 @@ header {
     font-family: sans-serif;
     padding-top: 20px;
 }
-.noteList { 
 
-     display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around; 
-}
-.noteListContainer {
-    
-    padding: 5px;
-}
 
-.note {
-    color: floralwhite;
-    border: 1px floralwhite dotted;
-    padding: 20px;
-    margin: 12px 0;
-    flex-basis: 25%;
-    background-color: darkgreen;
-}
-.noteFormContainer {
-    text-align: left;
-    
-}
 
-.noteListButton {
-    text-align: left;
-    padding: 10px;
-    margin-right: 125px;
-}
-.criminal__notes {
-    display: flex;
-}
 
-.alibi {
-    float: right;
-    background-color: midnightblue;
-    color: floralwhite;
-    padding: 0px 10px;
-    /* padding-bottom: 25px; */
-    margin-top: 35px;
-    
-}
 
