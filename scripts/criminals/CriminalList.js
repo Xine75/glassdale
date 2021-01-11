@@ -44,7 +44,7 @@ export const CriminalList = ()=> {
 //   //.join("") turns the array into a string with no commas between
 // }
 
-//FIRST, render ALL the criminals to the DOM. The opening state
+//FIRST, render ALL the criminals to the DOM (the opening state)
 //creates a render function that will iterate over all the criminals and render a specified array, in this case ALL the criminals
 
 const render = (criminalList) => {
