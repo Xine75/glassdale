@@ -3,7 +3,7 @@
 
 export const Facility = (facilityObject) => {
     return `
-    <section class="facilities" id="facility--${facilityObject.id}>
+    <section class="facilities" id="facility--${facilityObject.id}">
     <h4> ${facilityObject.facilityName}</h4>
     <p>Security: ${facilityObject.securityLevel}</p>
     <p>Capacity: ${facilityObject.capacity}</p>

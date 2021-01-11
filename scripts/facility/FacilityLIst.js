@@ -1,4 +1,5 @@
 //Render FacilityList cards to the DOM, taking place of criminals or witnesses
+//Work with many-to-many relationships: facilities <-> criminals
 //other half of event listner to react to button click
 
 import { getFacilities, useFacilities } from "./FacilityProvider.js"
@@ -18,8 +19,11 @@ let appStateCriminalFacilities = []
 
 //Renders a list of facilityObjects to the DOM
 const render = () => {
-    contentTarget.innerHTML = appStateFacilities.map(f => {
+    
+    // maps over facilityCriminalRelationships and filters out the facility that matches the id criminalFacility
+     contentTarget.innerHTML = appStateFacilities.map(f => {
         const facilityCriminalRelationships = appStateCriminalFacilities.filter(cf => cf.facilityId === f.id)
+        // maps over the previous array (facility id's) and finds the facility that matches the facility id on each criminal
         const relatedCriminalsArray = facilityCriminalRelationships.map(cfr => appStateCriminals.find(c => c.id === cfr.criminalId))
         const now = Date.now()
 
@@ -40,12 +44,13 @@ const render = () => {
 //Runs the render function to render all the facility elements to the .contentContainer
 //when the facility button is clicked
 
-const FacilityList = () => {
+export const FacilityList = () => {
     contentTarget.innerHTML = ""
     getFacilities()
     .then(getCriminalFacilities)
     .then(getCriminals)
     .then(() => {
+        
         appStateCriminals = useCriminals()
         appStateFacilities = useFacilities()
         appStateCriminalFacilities = useCriminalFacilities()
@@ -66,7 +71,7 @@ eventHub.addEventListener("showFacilities", () => {
     }
 })
 
-eventHub.addEventListener("showFacilities", () => {
-    // console.log("Show Facilities pt 2 listening")
-    FacilityList()
-})
+// eventHub.addEventListener("showFacilities", () => {
+//     // console.log("Show Facilities pt 2 listening")
+//     FacilityList()
+// })
