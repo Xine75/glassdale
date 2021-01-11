@@ -12,8 +12,8 @@ export const DisplayFacilitiesButton = () => {
 
 //Broadcast the fact that the button was clicked, no payload
 contentTarget.addEventListener("click", clickEvent => {
-    console.log("Facility Button Listening")
-    if(clickEvent.target.id === ("facilitiesButtonClicked")) {
+    // console.log("Facility Button Listening")
+    if(clickEvent.target.id === ("showFacilities")) {
         const facilityEvent = new CustomEvent("showFacilities")
         eventHub.dispatchEvent(facilityEvent)
     }

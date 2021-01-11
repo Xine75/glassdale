@@ -14,7 +14,6 @@ const contentTarget = document.querySelector(".contentContainer")
 let appStateWinessess =[]
 
 //Renders a list of witnessObjects to the DOM
-
 const render = () => {
     contentTarget.innerHTML = appStateWinessess.map(w => Witness(w)).join("")
 }
